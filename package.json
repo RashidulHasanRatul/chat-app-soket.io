@@ -1,0 +1,28 @@
+{
+  "name": "chat-app-soket.io",
+  "version": "1.0.0",
+  "description": "Chat appliation with Soket.IO",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+     "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RashidulHasanRatul/chat-app-soket.io.git"
+  },
+  "author": "Rashidul Hasan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RashidulHasanRatul/chat-app-soket.io/issues"
+  },
+  "homepage": "https://github.com/RashidulHasanRatul/chat-app-soket.io#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
