@@ -27,11 +27,15 @@ io.on("connection", (socket) => {
     callback();
   });
 
-  socket.on("sendLocation", (coords) => {
+  socket.on("sendLocation", (coords, callback) => {
+    if (!coords) {
+      return callback("Location not found");
+    }
     io.emit(
       "message",
       `https://google.com/maps?q=${coords.latitude},${coords.longitude}`
     );
+    callback();
   });
 
   socket.on("disconnect", () => {

@@ -11,7 +11,6 @@ document.querySelector("#message-form").addEventListener("submit", (e) => {
       return console.log(error);
     }
     console.log("Message delivered!");
-  
   });
 });
 
@@ -21,9 +20,18 @@ document.querySelector("#send-location").addEventListener("click", () => {
   }
 
   navigator.geolocation.getCurrentPosition((position) => {
-    socket.emit("sendLocation", {
-      latitude: position.coords.latitude,
-      longitude: position.coords.longitude,
-    });
+    socket.emit(
+      "sendLocation",
+      {
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude,
+      },
+      (error) => {
+        if (error) {
+          return console.log(error);
+        }
+        console.log("Location shared!");
+      }
+    );
   });
 });
