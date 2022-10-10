@@ -8,13 +8,27 @@
   </head>
   <body>
     <h1>Chat app Home page</h1>
+    <div id="message"></div>
+
     <form id="message-form" action="">
       <input name="message" placeholder="Enter your Message" />
       <button>Send</button>
     </form>
     <button id="send-location">Send Location</button>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.2.0/mustache.min.js"></script>
+    <script id="message_template" type="text/html">
+      <div>
+        <p> {{createdAt}} - {{message}}</p>
+      </div>
+    </script>
+
+    <script id="location_message_template" type="text/html">
+      <div>
+        <p>{{createdAt}}<a href="{{url}}" target="_blank">My Current location</a></p>
+      </div>
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.11.0/qs.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
